@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* Hide scrollbar for category tabs */
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s ease-out forwards;
+}
+
+/* Print / PDF Export Styling */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 11pt !important;
+  }
+
+  header,
+  nav,
+  aside,
+  button,
+  #share-modal-overlay,
+  #settings-modal-overlay,
+  .no-print {
+    display: none !important;
+  }
+
+  article {
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #0f172a !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+    margin-bottom: 1.5rem !important;
+  }
+
+  article h2,
+  article h3,
+  article h4,
+  article h5 {
+    color: #0f172a !important;
+  }
+
+  article p,
+  article span,
+  article div {
+    color: #334155 !important;
+  }
+}
